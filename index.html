@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Sayang 💖</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    margin-top: 30px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    background: white;
+    color: #ff4d6d;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#pesan {
+    display: none;
+    padding: 20px;
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.galeri {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.galeri img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.heart {
+    position: fixed;
+    color: red;
+    animation: jatuh 5s linear infinite;
+}
+
+@keyframes jatuh {
+    0% { transform: translateY(-100px); }
+    100% { transform: translateY(100vh); }
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Happy Birthday Sayang 🎂💖</h1>
+
+<button onclick="mulai()">Klik Aku 💕</button>
+
+<div id="pesan">
+
+<p>Selamat ulang tahun ya sayang ❤️</p>
+
+<p>Di hari spesial kamu ini, aku cuma mau bilang kalau aku bersyukur banget punya kamu di hidup aku 💖</p>
+
+<p>Kamu selalu bisa bikin aku senyum, nemenin aku di saat apapun, dan jadi orang yang paling berarti buat aku ✨</p>
+
+<p>Aku harap kamu selalu sehat, bahagia, dan semua impian kamu bisa tercapai 🌸</p>
+
+<p>Terima kasih sudah ada buat aku 💕</p>
+
+<p><b>Aku sayang kamu ❤️</b></p>
+
+<div class="galeri">
+    <img src="foto1.jpg">
+    <img src="foto2.jpg">
+    <img src="foto3.jpg">
+    <img src="foto4.jpg">
+</div>
+
+</div>
+
+<audio id="musik" loop>
+    <source src="music.mp3" type="audio/mp3">
+</audio>
+
+<script>
+function mulai() {
+    document.getElementById("pesan").style.display = "block";
+    document.getElementById("musik").play();
+}
+
+// animasi love
+setInterval(function(){
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.fontSize = (10 + Math.random() * 20) + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}, 300);
+</script>
+
+</body>
+</html>
